@@ -6,10 +6,11 @@ var fs = require('fs');
 
 var inputFile = 'input.geojson',
 	outputFile = 'output.geojson',
-	remove = ["properties","to","remove"];
+	remove = ["property","names","to","remove"];
 
 function editFunct(feature){
-	feature.TID = feature.properties.TID; // set the TID in the feature
+	// save propertyname one level up in the feature
+	feature.propertyname = feature.properties.propertyname; 
 	return feature;
 }
 
